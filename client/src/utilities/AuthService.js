@@ -59,11 +59,11 @@ export default class AuthService {
     })
   }  
   
-  makeEvent = (element, img_url, headline, date, description, location, cleaner) => {
+  makeEvent = (element, headline, date, description, location) => {
     return this.service({
     method: "POST",
     url: '/create_event', 
-    data: {element, img_url, headline, date, description, location, cleaner}
+    data: {element, headline, date, description, location}
   })
   .then(response => response.data)
   .catch(error =>{

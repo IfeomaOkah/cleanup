@@ -7,8 +7,8 @@ var createError = require('http-errors');
 router.post("/signup", (req,res,next)=> {   
     User.create(req.body)
         .then((user)=> {
-            let {username, email, firstname, lastname, dob, password} = user;
-            let sessionData = {username, email, firstname, dob, lastname, password};
+            let {username, email, firstname, lastname, dob, password, id} = user;
+            let sessionData = {username, email, firstname, dob, lastname, password, id};
             req.session.user = sessionData;
             res.status(200).json(sessionData);
         })
@@ -37,7 +37,8 @@ router.post("/login", (req,res,next)=> {
             }
         })
         .catch((error)=> {
-            next(createError(500));
+            if(error.name === "ValidationError") next(createError(400, error.message));
+            else next(createError(500));
         })
 })
 

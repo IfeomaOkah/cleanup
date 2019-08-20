@@ -10,7 +10,6 @@ const bodyParser = require('body-parser')
 const app = express();
 const mongoose = require('mongoose')
 const createError = require('http-errors')
-const authRoutes = require('./routes/auth-routes');
 
 mongoose
   .connect('mongodb://localhost/cleanup', {
@@ -60,8 +59,7 @@ function protect(req,res,next) {
 }
 app.use('/', require('./routes/index'));
 
-app.use('/api', (req,res,next)=> {debugger;next()},authRoutes);
-
+app.use('/api', require('./routes/auth-routes'));
 app.use('/api', require('./routes/user-routes'));
 app.use('/api',protect, require('./routes/event-routes'));
 
