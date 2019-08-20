@@ -1,0 +1,209 @@
+/* blue #13cced blend #12e061 green #00d90e  */
+
+/* Navbar */
+.logo {
+  margin: 3%;
+  padding: 0;
+  overflow: hidden;
+  float: left;
+  height: 10vw;
+  width: auto;
+}
+.link-main {
+  font-size: 2.5vw;
+  margin: 3%;
+  padding: 0;
+  overflow: hidden;
+  float: right;
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+
+}
+
+/* mouse over link */
+a:hover {
+  color: #13cced;
+}
+
+/* Landing Page */
+.beach {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100vw;
+}
+
+.link-land {
+  color: rgb(0, 0, 0);
+  text-decoration: underline;
+  text-decoration-color: #00d90e;
+}
+
+.choice {
+  margin: 3%;
+  padding: 0;
+}
+
+.elements {
+  margin: 3%;
+  float: left;
+  height: 20vw;
+  width: auto;
+  padding-left: 4vw;
+ 
+}
+
+@media screen and (max-width: 500px) {
+  .elements {
+    margin: 3%;
+    height: 20vh;
+    float: left;
+    padding-left: 25vw;
+  }
+}
+
+/* Sign up  */
+
+.signup {
+  background-image: url("/img/abstract-beach.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 80%;
+  background-size: 600px;
+  text-align: center;
+
+}
+
+#signup-heading {
+  padding-top: 20%; 
+  text-align: center;
+}
+
+.form-signup input {
+  width: 70%;
+  padding: 10px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background-color: #fff;
+  border: none;
+  border-bottom:solid 2px #13cced; 
+  text-align: left;
+  border-radius: 14px;
+}
+
+.form-signup button {
+  background: linear-gradient(90deg,  #00d90e77,#12e06153, #13cced48);
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  color: black;
+  width: 70%;
+  padding: 10px;
+}
+
+
+@media (max-width: 800px) {
+  .form-signup input {
+    margin: 1vh 0;
+  }
+
+  .form-signup {
+    flex-direction: column;
+  }
+}
+
+/* Login */
+.signup {
+  background-image: url("/img/abstract-beach.jpg");
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 80%;
+  background-size: 600px;
+  text-align: center;
+
+}
+
+#signup-heading {
+  padding-top: 20%; 
+  text-align: center;
+}
+
+.form-signup input {
+  width: 70%;
+  padding: 10px;
+  margin: 0px 0;
+  box-sizing: border-box;
+  vertical-align: middle;
+  background-color: #fff;
+  border: none;
+  border-bottom:solid 2px #13cced; 
+  text-align: left;
+  border-radius: 14px;
+}
+
+.form-signup button {
+  background: linear-gradient(90deg,  #00d90e77,#12e06153, #13cced48);
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  color: black;
+  width: 70%;
+  padding: 10px;
+}
+
+
+@media (max-width: 800px) {
+  .form-signup input {
+    margin: 1vh 0;
+  }
+
+  .form-signup {
+    flex-direction: column;
+  }
+}
+
+/* Profile */
+
+.profile-1 {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: 100vw;
+}
+
+.searchbar {
+  float: left;
+  border-radius: 30px;
+  width: 9rem;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+.searchbar:focus {
+  width: 27%;
+  color: black;
+  
+}
+
+
+.profile-2 {
+  margin: 3%;
+
+}
+.profile-3 {
+
+}
+.profile-4 {
+ 
+}
+
+
+#bt {
+  float:left;
+  border: solid 4px blue;
+  border-radius: 40%;
+  color: black;
+
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
