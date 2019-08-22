@@ -12,7 +12,7 @@ const mongoose = require('mongoose')
 const createError = require('http-errors')
 
 mongoose
-  .connect('mongodb://localhost/cleanup', {
+  .connect(process.env.MONGODB_URI, {
     userNewUrlParser : true
   })
   .then(x => {
@@ -50,12 +50,12 @@ function protect(req,res,next) {
   else next(createError(401))
 }
 
-app.use('/', require('./routes/index'));
+app.use('/api', require('./routes/index'));
 
-app.use('/api', require('./routes/auth-routes'));
-app.use('/api', require('./routes/user-routes'));
-app.use('/api', require('./routes/clean-routes'));
-app.use('/api', protect, require('./routes/event-routes'));
+app.use('/api/api', require('./routes/auth-routes'));
+app.use('/api/api', require('./routes/user-routes'));
+app.use('/api/api', require('./routes/clean-routes'));
+app.use('/api/api', protect, require('./routes/event-routes'));
 
 app.use(function(err, req, res, next) {
   debugger
@@ -63,9 +63,13 @@ app.use(function(err, req, res, next) {
   else res.status(500).json({message: "Something went wrong!"})
 })
 
+app.use((req, res, next) => {
+  // If no routes match, send them the React HTML.
+  res.sendFile(__dirname + "/public/index.html");
+});
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`server listening on port ${process.env.SERVER_PORT}`)
+app.listen(process.env.PORT, () => {
+  console.log(`server listening on port ${process.env.PORT}`)
 })
 
 module.exports = app; 

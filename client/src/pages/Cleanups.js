@@ -38,6 +38,7 @@ componentDidMount() {
 
   auth.getEvent()
   .then(response => {
+    debugger
     console.log(response)
     this.setState({
       cleanups: response
