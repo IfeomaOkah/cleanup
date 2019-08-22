@@ -29,7 +29,7 @@ export default class Signup extends Component {
       this.service.signup(username, email, firstname, lastname, dob, password)
       .then( response => {
         this.props.history.push({
-          pathname: '/',
+          pathname: '/login',
           state: response.username
         })
         .catch((error)=> {
@@ -45,12 +45,14 @@ export default class Signup extends Component {
 }  
   render() {
     return (
-      <Mainlayout>
-         <h1 id="signup-heading">Sign Up</h1>
+      <div className="signup-body">    
+      <div className="signup-header"></div>
+      <img className="signup-logo" src="/img/cleanup-logo.png" alt="img"/>
+      <h5 id="signup-heading">Make a difference while you mingle.</h5> 
 
           <div className="signup">
         
-            <form className="form-signup" onSubmit={this.handleFormSubmit}>
+            <form className="form-login" onSubmit={this.handleFormSubmit}>
 
                 <input type="username" name="username" placeholder="create username" value={this.state.username} onChange={ e => this.handleChange(e)} ></input>
 
@@ -65,17 +67,17 @@ export default class Signup extends Component {
                 <input type="password" name="password" placeholder="create password" value={this.state.password} onChange={ e => this.handleChange(e)}></input>
 
                 <button type="submit" value="Submit">submit</button> 
-            </form>
+                <p id="signup">Have account?
 
-            <p>Already have account? 
-              <Link to={"/login"}> Log in</Link>
+              <Link to={"/"}> Log in</Link>
             </p>
 
+            </form>
 
+            
+            </div> 
           </div>  
-  
-    
-      </Mainlayout>
+
     )
   }
 }

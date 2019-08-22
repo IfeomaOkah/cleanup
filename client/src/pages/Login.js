@@ -39,10 +39,13 @@ export default class Signup extends Component {
 
   render() {
     return (
-        <Mainlayout> 
-          <h1 id="signup-heading">Log in</h1>
-          <div className="signup">
-            <form className="form-signup" onSubmit={this.handleLogin}>
+      <div className="login-body">    
+      <div className="login-header"></div>
+      <img className="login-logo" src="/img/cleanup-logo.png" alt="img"/>
+      <h5 id="login-heading">Make a difference while you mingle.</h5>
+
+          <div className="sign-up ">
+            <form className="form-login" onSubmit={this.handleLogin}>
 
             <input type="text" name="username" placeholder="enter your username" value={this.state.username} onChange={this.handleFormLogin}/>  
 
@@ -50,9 +53,14 @@ export default class Signup extends Component {
 
             <button type="submit" value="Submit">submit</button> 
             </form>
+            <p id="signup">Don't have account? 
+              <Link to={"/signup"}> sign up</Link>
+            </p>
+
           </div> 
+          
+          </div>
         
-        </Mainlayout>
       
     )
   }

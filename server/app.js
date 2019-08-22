@@ -22,15 +22,6 @@ mongoose
     console.log('Error connecting to mongo', err);
   })
 
-  function protect(req,res,next){
-    if(!req.session.user) {
-        next(createError(403));
-    } else {
-        next();
-    }
-}
-
-
 app.use(session({
   secret:"the secret garden",
   resave: true,
@@ -54,16 +45,27 @@ app.use(bodyParser.urlencoded({
 }));
 
 function protect(req,res,next) {
+  debugger
   if(req.session.user) next()
   else next(createError(401))
 }
+
 app.use('/', require('./routes/index'));
 
 app.use('/api', require('./routes/auth-routes'));
 app.use('/api', require('./routes/user-routes'));
-app.use('/api',protect, require('./routes/event-routes'));
+app.use('/api', require('./routes/clean-routes'));
+app.use('/api', protect, require('./routes/event-routes'));
+
+app.use(function(err, req, res, next) {
+  debugger
+  if(err) res.status(err.status).json({message: err.message})
+  else res.status(500).json({message: "Something went wrong!"})
+})
+
 
 app.listen(process.env.SERVER_PORT, () => {
   console.log(`server listening on port ${process.env.SERVER_PORT}`)
 })
+
 module.exports = app; 

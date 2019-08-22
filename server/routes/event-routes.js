@@ -6,6 +6,7 @@ const User = require('../models/User');
 const mongoose = require("mongoose");
 const createError = require('http-errors')
 
+
 router.get('/profile', (req, res, next)=>{
   Event.create({
     element: req.body.element,
@@ -13,7 +14,7 @@ router.get('/profile', (req, res, next)=>{
     date: req.body.date,
     description: req.body.description,
     location: req.body.location, 
-    cleaner: req.body.cleaner    
+    cleaner: req.body.cleaner,
   })
     .then(response => {
       res.json(response);
@@ -24,7 +25,7 @@ router.get('/profile', (req, res, next)=>{
 });
 
 router.post("/create_event", (req,res,next)=> {
-     debugger
+  debugger
   let newEvent = req.body;
   newEvent.cleaner = mongoose.Types.ObjectId(req.session.user.id);
 
@@ -41,5 +42,35 @@ router.post("/create_event", (req,res,next)=> {
           else next(createError(500));
       })
 })
+
+
+router.post('/join/:id', (req, res, next) => {
+  debugger
+  Event.findByIdAndUpdate(req.params.id, {$push: { people: req.session.user.id }}, { new: true })
+  .then(updatedEvent => {
+    debugger
+    return User.findByIdAndUpdate(req.session.user.id, {$push: { upcoming: updatedEvent._id }}, { new: true })
+  })
+  .then(updatedUser => {
+    res.json(updatedUser)
+  })
+  .catch(err => {
+    next(createError(500))
+  })
+});
+
+router.get('/user-profile', (req, res, next) => {
+  debugger
+  User.findOne({_id: req.session.user.id})
+  .populate("events")
+  .populate("upcoming")
+  .then(user => {
+    debugger
+    res.json(user)
+  })
+  .catch(err => {
+    next(createError(500))    
+  })
+});
 
 module.exports = router;

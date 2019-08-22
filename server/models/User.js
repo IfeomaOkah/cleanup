@@ -8,6 +8,10 @@ const userSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "events"
     }],
+    upcoming: [{
+        type: Schema.Types.ObjectId,
+        ref: "events"
+    }],
     username: {
         type: String, 
         required: [true, "Please provide a username"],
@@ -76,39 +80,3 @@ module.exports = mongoose.model("user", userSchema, "users");
 
 
 
-
-
-// const mongoose = require('mongoose');
-// const Schema   = mongoose.Schema;
-
-// const userSchema = new Schema({
-//   username: {
-//     type: String,
-//     required: [true, "Please provide a username."],
-//     validate: {
-//       validator: function(username) {
-//         if(username.length < 8) return false
-//         else return true
-//       },
-//       message: "The username has to be at least 8 characters long."
-//     }
-//   },
-//   firstName: String, 
-//   lastName: String, 
-//   dob: Date,
-//   email:{
-//     type: String, 
-//     required: true, 
-//     trim: true,
-//     match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill in a valid email address.']
-//   },
-//   password: {
-//     type: String, 
-//     required: [true, "Please provide a password"],
-//     minlength: 6
-//   }
-// }); 
-
-// const User = mongoose.model('user', userSchema);
-
-// module.exports = User;

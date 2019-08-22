@@ -17,6 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "start-dev": "concurrently \"nodemon ../server/app.js\" \"react-scripts start\"",
+    "debug-concurrently": "concurrently \"nodemon --inspect ../server/app.js\" \"react-scripts start\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

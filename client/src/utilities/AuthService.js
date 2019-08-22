@@ -59,19 +59,5 @@ export default class AuthService {
     })
   }  
   
-  makeEvent = (element, headline, date, description, location) => {
-    return this.service({
-    method: "POST",
-    url: '/create_event', 
-    data: {element, headline, date, description, location}
-  })
-  .then(response => response.data)
-  .catch(error =>{
-    console.log(error);
-  })
-}
-getEvent = ()=>{
-  return JSON.parse(localStorage.getItem('event'));
-}
 }
 

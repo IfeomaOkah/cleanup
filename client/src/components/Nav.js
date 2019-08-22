@@ -41,27 +41,14 @@ class Nav extends Component {
               >
                 <img className="logo" src="/img/cleanup-logo.png" alt="img"/>
               </Link>
-
-              <Link 
-                to="/es" 
-                className="link-main"
-                >
-                  español
-              </Link>
-
               
             {
                 localStorage.user? 
                 <div>
-                <Link to="/logout" className="link-main" onClick={this.handleLogout}>logout</Link>
-
-                <Link
-                    to='/profile'
-                    className="link-main"
-                  >profile
-                  </Link>
-
-                 <h3 className="link-main">Hi, {auth.getUser()}</h3>
+             
+                
+               
+                
                  </div>
               :
                 <div>
@@ -70,6 +57,7 @@ class Nav extends Component {
                     className="link-main"
                   >signup
                   </Link>
+
                   <Link
                     to='/login'
                     className="link-main"
