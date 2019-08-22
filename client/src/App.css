@@ -265,7 +265,6 @@ a :hover {
 
 
 .profile-container {
-  max-width: 80%;  
   margin: .5rem;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -294,7 +293,6 @@ a :hover {
 
 .profile-1 {
   background-image: url("/img/cumulus-cloud.jpg");
-  height: 500px;
   width: 70vw;  
   border-radius: 30px;
   text-align: center;
@@ -318,7 +316,6 @@ a :hover {
 
 .profile-2 {
   background-image: url("/img/forrest.jpeg");
-  height: 500px;
   width: 70vw;  
   border-radius: 30px;
   text-align: center;
@@ -327,7 +324,6 @@ a :hover {
 }
 .profile-3 {
   background-image: url("/img/waves.jpg");
-  height: 500px;
   width: 70vw;  
   border-radius: 30px;
   text-align: center;
@@ -336,7 +332,6 @@ a :hover {
 }
 .upcoming {
   background-image: url("/img/beachplastic.jpg");
-  height: 500px;
   width: 70vw; 
   border-radius: 30px;
   text-align: center;
@@ -351,7 +346,6 @@ a :hover {
   border: solid 4px blue;
   border-radius: 40%;
   color: black;
-
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -391,4 +385,12 @@ a :hover {
   width: 100vw;  
   padding: 6rem;
   overflow: hidden;
+}
+
+.joinBtn {
+  background-color: green
+}
+
+.pushedBtn {
+  background-color: yellow
 }

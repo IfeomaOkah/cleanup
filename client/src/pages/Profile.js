@@ -34,63 +34,49 @@ export default class Profile extends Component {
      <div>
       <Nav />
         <div className="profile-body">
-          
           <div className="profile-header">
-          <Link to="/logout" className="link-logout" onClick={this.handleLogout}>
-                logout
-          </Link>
-          <Link
-            to="/profile">
-            <h3 className="hello">Hi, {auth.getUser()}</h3>
-          </Link>
-
-
-                
+            <Link 
+              to="/" 
+              className="link-logout" 
+              onClick={this.handleLogout}>
+              logout
+            </Link>
+            <Link
+              to="/profile">
+              <h3 className="hello">
+              Hi, {auth.getUser()}</h3>
+            </Link>    
           </div>
-        
-        <div className="profile-container"></div>
+        <div className="profile-container">
           <div className="profile-1">
             <Link
-                    to='/cleanups'
-                    className="link-profile"
-                  > <h3>Browse CleanUps    </h3> 
-                  </Link>
-               
+              to='/cleanups'
+              className="link-profile">
+              <h3>Browse CleanUps    </h3> 
+            </Link>   
           </div>
-
           <div className="profile-2">
-          <Link
-                    to='/create_event'
-                    className="link-profile"
-                  ><h3>Plan a CleanUp</h3>
-                  </Link>
-                  
+            <Link
+              to='/create_event'
+              className="link-profile">
+              <h3>Plan a CleanUp</h3>
+            </Link>             
           </div>
           <div className="profile-3">
-             <Link
-                    to='/mycleanups'
-                    className="link-profile"
-                  ><h3>My CleanUps</h3>
-                  </Link>
-     
+            <Link
+              to='/mycleanups'
+              className="link-profile">
+              <h3>My CleanUps</h3>
+            </Link>
           </div>
-          
-
           <div className="upcoming">
-          <Link
-                    to='/upcoming'
-                    className="link-profile"
-                  ><h3>Upcoming CleanUps</h3>
-                  </Link>
-
+            <Link
+              to='/upcoming'
+              className="link-profile">
+              <h3>Upcoming CleanUps</h3>
+            </Link>
           </div>
-
-
-          <div className="profile-4"></div>
-          
-  
-        
-
+          </div>
 
         </div>
      </div> 

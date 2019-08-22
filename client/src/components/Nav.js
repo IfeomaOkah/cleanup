@@ -32,36 +32,27 @@ class Nav extends Component {
         })
     }
     render() {
-   
-        return (
-            <nav>
-              <Link 
-                to="/" 
-                className="link-logo"
-              >
-                <img className="logo" src="/img/cleanup-logo.png" alt="img"/>
-              </Link>
-              
+      return (
+        <nav>
+          <Link 
+            to="/" 
+            className="link-logo">
+            <img className="logo" src="/img/cleanup-logo.png" alt="img"/>
+          </Link>
             {
-                localStorage.user? 
-                <div>
-             
-                
-               
-                
-                 </div>
+              localStorage.user? 
+                <div></div>
               :
                 <div>
                   <Link
                     to='/signup'
                     className="link-main"
-                  >signup
+                    >signup
                   </Link>
-
                   <Link
                     to='/login'
                     className="link-main"
-                  >login
+                    >login
                   </Link>
                 </div>
             }
@@ -73,19 +64,3 @@ class Nav extends Component {
 export default withRouter(Nav);
 
 
-
-// import React, { Component } from 'react'
-// import {Link} from "react-router-dom";
-
-// export default class Nav extends Component {
-//   render() {
-//     return (
-//       <div className="navbar">
-//         <Link to="/" className="link-logo"><img className="logo" src="/img/cleanup-logo.png" alt="img"/></Link>
-//         <Link to="/signup" className="link-main">sign up</Link>
-//         <Link to="/login" className="link-main">log in</Link>
-//         <Link to="/es" className="link-main">español</Link>   
-//       </div>
-//     )
-//   }
-// }

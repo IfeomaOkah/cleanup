@@ -44,31 +44,24 @@ componentDidMount() {
     })
   })
   .catch(err => {console.log(err)})
-
-
 }
-
   render() {
     return (
       <div>
        <Nav />
        <Link
-                to="/profile">
-               <h3 className="">Hi, {hello.getUser()}</h3>
-              </Link>
-       <div className="profile-body">
-        <div className="profile-header">
-        </div>
+          to="/profile">
+          <h3 className="">Hi, {hello.getUser()}</h3>
+        </Link>
+      <div className="profile-body">
+        <div className="profile-header"></div>
         <div> 
-            {this.state.cleanups.map(cleanup =>
-            <CleanComps cleanup={cleanup} join={this.join}/>
-              )}
-           
-
+          {this.state.cleanups.map(cleanup =>
+          <CleanComps cleanup={cleanup} join={this.join}/>
+            )}
+        </div>
          </div>
-         </div>
-    </div>
-
+      </div>
     )
   }
 }

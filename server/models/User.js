@@ -17,10 +17,10 @@ const userSchema = new Schema({
         required: [true, "Please provide a username"],
         validate: {
             validator: function(username) {
-              return this.model("user").findOne({name: username})
-                        .then((user)=> {
-                            if(user) throw new Error("username unavailable");
-                            else return;
+                return this.model("user").findOne({name: username})
+                    .then((user)=> {
+                        if(user) throw new Error("username unavailable");
+                        else return;
                         })
             },
             message: "username unavailable"

@@ -5,16 +5,16 @@ const auth = new AuthService();
 
 const ProtectedRoute = ({component: Component, redirectUrl, ...rest}) => {  
   return (
-      <Route
-        {...rest}
-        render={ props  => {
-            var user = auth.getUser();
-            if(user){
-              return <Component {...props} />
-            } else {
-              return <Redirect to={{pathname: redirectUrl || '/', state: {from: props.location}}} />
+    <Route
+      {...rest}
+      render={ props  => {
+      var user = auth.getUser();
+        if(user){
+          return <Component {...props} />
+        } else {
+          return <Redirect to={{pathname: redirectUrl || '/', state: {from: props.location}}} />
             }
-          }
+        }
         }
       />
     )

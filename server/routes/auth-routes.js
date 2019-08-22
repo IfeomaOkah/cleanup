@@ -47,10 +47,6 @@ router.post("/login", (req,res,next)=> {
      res.status(205).end();
  })
 
-// router.get('/cleanups', (req, res, next) => {
-//     res.json(cleanups);
-// });
-
 module.exports = router;
 
 

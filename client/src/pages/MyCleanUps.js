@@ -10,31 +10,22 @@ export default class MyCleanUps extends Component {
   render() {
     return (
       <div>
-      <Nav />
+        <Nav />
         <div className="profile-body">
-          
           <div className="mycleanups-header">
-          <Link to="/logout" className="link-logout" onClick={this.handleLogout}>
-                logout
-          </Link>
-          <Link
-            to="/profile">
-            <h3 className="hello-my">Hi, {auth.getUser()}</h3>
-          </Link>
-
-
-                
+            <Link 
+              to="/logout" 
+              className="link-logout" 
+              onClick={this.handleLogout}>
+              logout
+            </Link>
+            <Link
+              to="/profile">
+              <h3 className="hello-my">
+              Hi, {auth.getUser()}</h3>
+            </Link>
           </div>
-        
         <div className="profile-container"></div>
-          
-
-
-          
-  
-        
-
-
         </div>
      </div> 
     )

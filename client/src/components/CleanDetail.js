@@ -23,7 +23,6 @@ export default class CleanDetail extends Component {
       console.log(err)
     })
   }
- 
   render() {
     return (
       <>

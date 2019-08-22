@@ -52,7 +52,7 @@ export default class AuthService {
 
   logout = ()=>{
     return this.service({
-      url: '/logout',
+      url: '/login',
     })
     .then((res)=> {
       localStorage.removeItem('user');

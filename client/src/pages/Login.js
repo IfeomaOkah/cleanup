@@ -36,32 +36,27 @@ export default class Signup extends Component {
         user
     })
   } 
-
   render() {
     return (
       <div className="login-body">    
-      <div className="login-header"></div>
-      <img className="login-logo" src="/img/cleanup-logo.png" alt="img"/>
-      <h5 id="login-heading">Make a difference while you mingle.</h5>
+        <div className="login-header"></div>
+        <img className="login-logo" src="/img/cleanup-logo.png" alt="img"/>
+        <h5 id="login-heading">Make a difference while you mingle.</h5>
+        <div className="sign-up ">
+          <form className="form-login" onSubmit={this.handleLogin}>
 
-          <div className="sign-up ">
-            <form className="form-login" onSubmit={this.handleLogin}>
+          <input type="text" name="username" placeholder="enter your username" value={this.state.username} onChange={this.handleFormLogin}/>  
 
-            <input type="text" name="username" placeholder="enter your username" value={this.state.username} onChange={this.handleFormLogin}/>  
+          <input type="password" name="password" placeholder="enter your password" value={this.state.password} onChange={this.handleFormLogin}/>
 
-            <input type="password" name="password" placeholder="enter your password" value={this.state.password} onChange={this.handleFormLogin}/>
+          <button type="submit" value="Submit">submit</button> 
+          </form>
 
-            <button type="submit" value="Submit">submit</button> 
-            </form>
-            <p id="signup">Don't have account? 
-              <Link to={"/signup"}> sign up</Link>
-            </p>
-
-          </div> 
-          
-          </div>
-        
-      
+          <p id="signup">Don't have account? 
+            <Link to={"/signup"}> sign up</Link>
+          </p>
+        </div>       
+      </div>   
     )
   }
 }

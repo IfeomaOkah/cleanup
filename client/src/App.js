@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom';
-import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -10,19 +9,13 @@ import CleanUps from './pages/CleanUps';
 import CleanDetail from './components/CleanDetail';
 import MyCleanUps from './pages/MyCleanUps';
 import Upcoming from './pages/Upcoming';
-
-
 import './App.css';
-
-
-
 
 export default class App extends Component {
   render() {
     return (
       <div>
         <Switch>
-{/* English Pages */}
           <Route exact path="/" component={Login}/>
           <Route path="/signup" component={Signup}/>
           <Route path="/mycleanups" component={MyCleanUps}/>
@@ -42,8 +35,7 @@ export default class App extends Component {
             path="/profile" 
             component= {Profile}
           /> */}
-        </Switch>
-        
+        </Switch> 
       </div>
     )
   }

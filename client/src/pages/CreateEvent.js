@@ -43,8 +43,7 @@ export default class CreateEvent extends Component {
       <div className="login-body">
         <div className="login-header"></div>
         <img className="login-logo" src="/img/cleanup-logo.png" alt="img"/>
-      <h5 id="login-heading">Make a difference while you mingle.</h5>
-
+        <h5 id="login-heading">Make a difference while you mingle.</h5>
           <div className="signup">
             <form className="form-login" onSubmit={this.handleEventSubmit}>
 
@@ -55,15 +54,18 @@ export default class CreateEvent extends Component {
               <input type="text" name="description" placeholder="description" value={this.state.description} onChange={ e => this.handleEvent(e)} ></input>
 
               <input type="text" name="location" placeholder="location" value={this.state.location} onChange={ e => this.handleEvent(e)} ></input>
-<br></br>
+          
+              <br></br>
+
               <button type="submit" value="Submit">Create CleanUp!</button> 
                
-              <Link to={"/profile"}> <p id="signup">maybe later</p></Link>
+              <Link 
+                to={"/profile"}> 
+                <p id="signup">maybe later</p>
+              </Link>
             
             </form>
-           
             <br></br>
-            
           </div>
       </div>
     )
